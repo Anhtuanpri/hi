@@ -1,153 +1,152 @@
-// Import Firebase
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
-import { getDatabase, ref, push, onValue, remove, set } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-database.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+import { getDatabase, ref, push, onValue, remove, update } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
 
-// Firebase Config
 const firebaseConfig = {
   apiKey: "AIzaSyDL54a3OIuzaxY_IEQgscCzIfBWCQqvhcM",
   authDomain: "sample-firebase-ai-app-2a091.firebaseapp.com",
-  databaseURL: "https://sample-firebase-ai-app-2a091-default-rtdb.firebaseio.com",
   projectId: "sample-firebase-ai-app-2a091",
   storageBucket: "sample-firebase-ai-app-2a091.appspot.com",
   messagingSenderId: "94515253749",
-  appId: "1:94515253749:web:86594f2222889c6472d0bc"
+  appId: "1:94515253749:web:86594f2222889c6472d0bc",
+  databaseURL: "https://sample-firebase-ai-app-2a091-default-rtdb.asia-southeast1.firebasedatabase.app/"
 };
 
-// Init Firebase
 const app = initializeApp(firebaseConfig);
 const db = getDatabase(app);
 const commentRef = ref(db, "comments");
 
-// Helper: Time formatter
-function timeSince(ts) {
-  const now = new Date();
-  const seconds = Math.floor((now - new Date(ts)) / 1000);
-  const d = Math.floor(seconds / 86400);
-  if (d > 0) return `${d} ngày trước`;
-  const h = Math.floor(seconds / 3600);
-  if (h > 0) return `${h} giờ trước`;
-  const m = Math.floor(seconds / 60);
-  return m > 0 ? `${m} phút trước` : `Vừa xong`;
-}
-
-// Gửi bình luận
-window.postComment = function(parentId = null) {
-  const name = document.getElementById("nameInput").value.trim();
-  const avatar = document.getElementById("avatarInput").value.trim();
-  const content = parentId ? document.getElementById(`replyInput-${parentId}`).value : document.getElementById("commentInput").value;
-
-  if (!name || !content) return alert("Nhập đầy đủ tên và nội dung");
-
-  const data = {
-    name,
-    avatar: avatar || "https://i.imgur.com/1X5j5Wk.png",
-    content,
-    timestamp: Date.now(),
-    likes: 0,
-    parent: parentId
-  };
-
-  push(commentRef, data);
-  if (parentId) {
-    document.getElementById(`replyInput-${parentId}`).value = "";
-    document.getElementById(`replyForm-${parentId}`).style.display = "none";
-  } else {
+window.postComment = () => {
+  const text = document.getElementById("commentInput").value.trim();
+  if (text) {
+    push(commentRef, {
+      text,
+      time: Date.now(),
+      avatar: "https://i.pravatar.cc/32",
+      parentId: null,
+      likes: 0
+    });
     document.getElementById("commentInput").value = "";
   }
 };
 
-// Hiển thị bình luận
-onValue(commentRef, (snapshot) => {
-  const data = snapshot.val();
-  const list = document.getElementById("commentList");
-  list.innerHTML = "";
-
+function renderComments(data) {
+  const container = document.getElementById("commentsContainer");
+  container.innerHTML = "";
   const comments = [];
-  for (let id in data) {
-    const c = data[id];
-    comments.push({ id, ...c });
-  }
+  data.forEach(item => {
+    const c = item.val();
+    c.id = item.key;
+    comments.push(c);
+  });
 
-  const parents = comments.filter(c => !c.parent);
-  const replies = comments.filter(c => c.parent);
+  const parents = comments.filter(c => !c.parentId);
+  const replies = comments.filter(c => c.parentId);
 
-  parents.sort((a, b) => b.timestamp - a.timestamp);
+  parents.sort((a,b) => b.time - a.time);
 
-  for (let c of parents) {
-    const el = createCommentElement(c, replies);
-    list.appendChild(el);
-  }
-});
-
-// Tạo thẻ comment
-function createCommentElement(comment, allReplies) {
-  const div = document.createElement("div");
-  div.className = "comment";
-
-  const replies = allReplies.filter(r => r.parent === comment.id);
-
-  div.innerHTML = `
-    <div class="comment-header">
-      <img class="avatar" src="${comment.avatar}" />
-      <strong>${comment.name}</strong> <span style="font-size:12px;margin-left:auto;">${timeSince(comment.timestamp)}</span>
-    </div>
-    <div class="comment-content">${comment.content}</div>
-    <button class="like-button" onclick="likeComment('${comment.id}')">👍 ${comment.likes}</button>
-    <button class="reply-button" onclick="toggleReply('${comment.id}')">↩️ Trả lời</button>
-    ${canDelete(comment) ? `<button class="delete-button" onclick="deleteComment('${comment.id}')">🗑 Xoá</button>` : ""}
-    <div class="reply-form" id="replyForm-${comment.id}">
-      <textarea id="replyInput-${comment.id}" placeholder="Nhập câu trả lời..."></textarea>
-      <button onclick="postComment('${comment.id}')">Gửi</button>
-    </div>
-    <div class="reply-container" id="replies-${comment.id}"></div>
-  `;
-
-  for (let r of replies) {
-    const replyDiv = createCommentElement(r, allReplies);
-    div.querySelector(`#replies-${comment.id}`).appendChild(replyDiv);
-  }
-
-  return div;
+  parents.forEach(parent => {
+    const div = document.createElement("div");
+    div.className = "comment-box";
+    div.innerHTML = `
+      <div class="comment-header">
+        <img src="${parent.avatar}" class="avatar">
+        <strong>${new Date(parent.time).toLocaleString()}</strong>
+        <span class="like-btn" onclick="likeComment('${parent.id}')">👍 ${parent.likes || 0}</span>
+        <span class="reply-btn" onclick="toggleReply('${parent.id}')">Trả lời</span>
+        <span class="delete-btn" onclick="deleteComment('${parent.id}')">Xóa</span>
+      </div>
+      <div>${parent.text}</div>
+      <div class="reply-input" id="reply-${parent.id}">
+        <textarea id="replyText-${parent.id}" rows="2" style="width:100%; margin-top:5px;"></textarea>
+        <button onclick="submitReply('${parent.id}')">Gửi</button>
+      </div>
+      <div class="show-replies" onclick="toggleReplies('${parent.id}')">Xem câu trả lời (${replies.filter(r => r.parentId === parent.id).length})</div>
+      <div id="replies-${parent.id}" style="display:none;"></div>
+    `;
+    container.appendChild(div);
+  });
 }
 
-// Like
-window.likeComment = function(id) {
-  const itemRef = ref(db, `comments/${id}`);
-  onValue(itemRef, (snapshot) => {
+window.toggleReply = id => {
+  const box = document.getElementById(`reply-${id}`);
+  box.style.display = box.style.display === "block" ? "none" : "block";
+};
+
+window.submitReply = parentId => {
+  const input = document.getElementById(`replyText-${parentId}`);
+  const text = input.value.trim();
+  if (text) {
+    push(commentRef, {
+      text,
+      time: Date.now(),
+      avatar: "https://i.pravatar.cc/32",
+      parentId,
+      likes: 0
+    });
+    input.value = "";
+  }
+};
+
+window.toggleReplies = parentId => {
+  const replyBox = document.getElementById(`replies-${parentId}`);
+  if (replyBox.style.display === "block") {
+    replyBox.style.display = "none";
+    replyBox.innerHTML = "";
+  } else {
+    onValue(commentRef, snapshot => {
+      const replies = [];
+      snapshot.forEach(item => {
+        const val = item.val();
+        if (val.parentId === parentId) {
+          replies.push({ ...val, id: item.key });
+        }
+      });
+      replies.sort((a,b) => a.time - b.time);
+      replyBox.innerHTML = "";
+      replies.forEach(r => {
+        const rdiv = document.createElement("div");
+        rdiv.className = "reply-box";
+        rdiv.innerHTML = `
+          <div class="comment-header">
+            <img src="${r.avatar}" class="avatar">
+            <strong>${new Date(r.time).toLocaleString()}</strong>
+            <span class="like-btn" onclick="likeComment('${r.id}')">👍 ${r.likes || 0}</span>
+            <span class="delete-btn" onclick="deleteComment('${r.id}')">Xóa</span>
+          </div>
+          <div>${r.text}</div>
+        `;
+        replyBox.appendChild(rdiv);
+      });
+      replyBox.style.display = "block";
+    });
+  }
+};
+
+window.likeComment = id => {
+  const targetRef = ref(db, `comments/${id}`);
+  onValue(targetRef, snapshot => {
     const data = snapshot.val();
     if (data) {
-      set(itemRef, { ...data, likes: (data.likes || 0) + 1 });
+      update(targetRef, { likes: (data.likes || 0) + 1 });
     }
   }, { onlyOnce: true });
 };
 
-// Toggle trả lời
-window.toggleReply = function(id) {
-  const f = document.getElementById(`replyForm-${id}`);
-  f.style.display = f.style.display === "none" ? "flex" : "none";
-};
-
-// Xoá bình luận
-window.deleteComment = function(id) {
-  if (confirm("Bạn có chắc muốn xoá?")) {
+window.deleteComment = id => {
+  if (confirm("Bạn có chắc muốn xóa?")) {
     remove(ref(db, `comments/${id}`));
   }
 };
 
-// Tự xoá sau 7 ngày
-onValue(commentRef, (snapshot) => {
-  const data = snapshot.val();
+// Tự động xóa comment sau 7 ngày
+onValue(commentRef, snapshot => {
   const now = Date.now();
-  for (let id in data) {
-    const c = data[id];
-    if (now - c.timestamp > 7 * 24 * 60 * 60 * 1000) {
-      remove(ref(db, `comments/${id}`));
+  snapshot.forEach(item => {
+    const val = item.val();
+    if (now - val.time > 7 * 24 * 60 * 60 * 1000) {
+      remove(ref(db, `comments/${item.key}`));
     }
-  }
-}, { onlyOnce: false });
+  });
+});
 
-// Kiểm tra quyền xoá (admin hoặc người đăng)
-function canDelete(cmt) {
-  const currentName = document.getElementById("nameInput").value.trim();
-  return currentName === "admin" || currentName === cmt.name;
-}
+onValue(commentRef, renderComments);
