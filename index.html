@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Bình luận Firebase</title>
+  <style>
+    body { font-family: Arial; margin: 40px; background: #f9f9f9; }
+    #comment-form, .comment { background: white; padding: 15px; border-radius: 8px; box-shadow: 0 0 5px #ccc; margin-bottom: 10px; }
+    input, textarea { width: 100%; margin: 5px 0; padding: 8px; border-radius: 4px; border: 1px solid #ccc; }
+    button { padding: 6px 10px; margin-top: 6px; cursor: pointer; }
+    .reply { margin-left: 20px; }
+    .meta { font-size: 12px; color: gray; }
+    .like-btn { color: blue; cursor: pointer; }
+  </style>
+</head>
+<body>
+
+  <h2>Bình luận</h2>
+  <form id="comment-form">
+    <input type="text" id="name" placeholder="Tên của bạn" required />
+    <textarea id="message" placeholder="Viết bình luận..." required></textarea>
+    <button type="submit">Gửi bình luận</button>
+  </form>
+
+  <div id="comments-container"></div>
+
+  <script type="module" src="./comment.js"></script>
+</body>
+</html>
