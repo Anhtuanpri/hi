@@ -1,67 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <title>Bình luận</title>
-  <style>
-    body {
-      background: url('https://i.imgur.com/nl5YVfY.jpg') no-repeat center center fixed;
-      background-size: cover;
-      font-family: Arial;
-      color: white;
-    }
-    .comment-box, .reply-box {
-      background-color: rgba(0,0,0,0.5);
-      padding: 10px;
-      margin-bottom: 10px;
-      border-radius: 8px;
-    }
-    .reply-box {
-      margin-left: 0; /* không thụt lề */
-      border-left: 2px solid rgba(255,255,255,0.2);
-    }
-    .comment-header {
-      display: flex;
-      align-items: center;
-      margin-bottom: 5px;
-    }
-    .avatar {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      margin-right: 10px;
-    }
-    .reply-btn, .delete-btn {
-      cursor: pointer;
-      font-size: 12px;
-      color: lightblue;
-      margin-left: 10px;
-    }
-    .like-btn {
-      cursor: pointer;
-      font-size: 12px;
-      color: lightgreen;
-      margin-left: 10px;
-    }
-    .reply-input {
-      display: none;
-      margin-top: 5px;
-    }
-    .show-replies {
-      cursor: pointer;
-      font-size: 12px;
-      margin-top: 5px;
-      color: #ccc;
-    }
-  </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Huyền Cửu Thiên - Chat Tiên Giới</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <div class="comment-box">
-    <textarea id="commentInput" placeholder="Nhập bình luận..." rows="2" style="width:100%;"></textarea>
-    <button onclick="postComment()">Gửi</button>
-  </div>
-  <div id="commentsContainer"></div>
+  <header>
+    <h1>🌌 Chat Tiên Giới</h1>
+    <button id="clearBtn" title="Xoá tất cả">🗑</button>
+  </header>
 
-  <script type="module" src="comment.js"></script>
+  <main id="chat-container">
+    <ul id="messages"></ul>
+  </main>
+
+  <footer>
+    <button class="icon-btn" id="emojiBtn">😊</button>
+    <input type="file" id="imageInput" accept="image/*" hidden />
+    <button class="icon-btn" id="imageBtn" title="Gửi ảnh">🖼</button>
+    <input type="text" id="messageInput" placeholder="Nhập lời tiên tri..." />
+    <button class="icon-btn" id="sendBtn" title="Gửi">📨</button>
+  </footer>
+
+  <div id="emojiPicker" class="hidden"></div>
+
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
+  <script src="script.js" type="module"></script>
 </body>
 </html>
