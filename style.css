@@ -1,0 +1,148 @@
+/* Reset và nền */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: url('https://i.imgur.com/fn4KqN6.jpg') no-repeat center center fixed;
+  background-size: cover;
+  backdrop-filter: blur(8px);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+/* Header */
+header {
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(0,0,0,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+
+/* Chat khung chính */
+#chat-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: 15px;
+}
+
+/* Mỗi tin nhắn */
+#messages li {
+  list-style: none;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  position: relative;
+  animation: fadeIn 0.3s ease;
+}
+
+/* Avatar + khung viền */
+#messages li .avatar-frame {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  border: 3px solid #ffd700; /* khung vàng */
+  padding: 2px;
+  background-color: #222;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+.avatar-frame img {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Nội dung chat */
+.message-box {
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255,255,255,0.15);
+  padding: 10px 15px;
+  border-radius: 12px;
+  max-width: 70%;
+  backdrop-filter: blur(4px);
+  word-wrap: break-word;
+}
+.message-box p {
+  margin: 0;
+}
+.message-box .timestamp {
+  font-size: 0.75em;
+  color: #aaa;
+  margin-top: 5px;
+}
+
+/* Footer nhập tin */
+footer {
+  display: flex;
+  align-items: center;
+  padding: 10px 15px;
+  background: rgba(0,0,0,0.3);
+  border-top: 1px solid rgba(255,255,255,0.15);
+  gap: 10px;
+}
+
+#messageInput {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  color: white;
+}
+
+/* Nút icon */
+.icon-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.4em;
+  cursor: pointer;
+  color: #fff;
+  transition: transform 0.2s;
+}
+.icon-btn:hover {
+  transform: scale(1.2);
+}
+
+/* Emoji Picker */
+#emojiPicker {
+  position: absolute;
+  bottom: 60px;
+  left: 20px;
+  background: #111;
+  border-radius: 10px;
+  padding: 10px;
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+  max-width: 300px;
+  z-index: 100;
+}
+.hidden {
+  display: none;
+}
+
+/* Hiệu ứng */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(5px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Thanh cuộn */
+#chat-container::-webkit-scrollbar {
+  width: 6px;
+}
+#chat-container::-webkit-scrollbar-thumb {
+  background: rgba(255,255,255,0.2);
+  border-radius: 3px;
+}
