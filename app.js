@@ -1,6 +1,6 @@
 // Cấu hình Firebase
 const firebaseConfig = {
-  apiKey: "AIzaSyDtR...jzvOE", // Đã có trong code bạn gửi
+  apiKey: "AIzaSyBO-eccBq3yRfZrSLaGBm37uCCK_H_xS-8", // Đã có trong code bạn gửi
   authDomain: "sample-firebase-ai-app-2a091.firebaseapp.com",
   databaseURL: "https://sample-firebase-ai-app-2a091-default-rtdb.firebaseio.com",
   projectId: "sample-firebase-ai-app-2a091",
