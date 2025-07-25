@@ -2,28 +2,33 @@
 <html lang="vi">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Huyền Cửu Thiên - Chat</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chat Tối Thượng</title>
   <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="https://cdn-icons-png.flaticon.com/512/4712/4712027.png" />
 </head>
 <body>
-  <div class="chat-container">
-    <div class="chat-header">
-      <h2>💬 Chat Huyền Cửu Thiên</h2>
-    </div>
-    <ul id="messages"></ul>
-    <div class="chat-controls">
-      <input type="file" id="imageInput" accept="image/*">
+  <div id="chatContainer" class="glass">
+    <header>
+      <h2>💬 Huyền Cửu Thiên Chat</h2>
+    </header>
+
+    <ul id="messagesUl"></ul>
+
+    <div class="input-area">
+      <input type="file" id="imageInput" accept="image/*" hidden />
+      <button onclick="imageInput.click()">🖼️</button>
+      <button onclick="emojiPicker.classList.toggle('show')">😊</button>
       <input type="text" id="messageInput" placeholder="Nhập tin nhắn..." />
-      <button id="emojiBtn">😊</button>
       <button id="sendBtn">Gửi</button>
+      <button id="clearBtn">🗑️</button>
     </div>
-    <div id="emojiPicker" style="display:none;"></div>
+
+    <div id="emojiPicker"></div>
   </div>
 
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database-compat.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.4/dist/index.min.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.6.11/firebase-database-compat.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
