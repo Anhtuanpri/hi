@@ -1,137 +1,86 @@
-/* Reset cơ bản */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
-
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: url('https://i.imgur.com/Hu6GtW4.jpg') no-repeat center center fixed;
-  background-size: cover;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: radial-gradient(circle, #1f1f2e, #0c0c12);
+  color: #f0f0f0;
 }
 
 .chat-container {
-  backdrop-filter: blur(15px) brightness(1.1);
-  background: rgba(0, 0, 0, 0.4);
-  border: 2px solid #ffcc00;
-  border-radius: 18px;
-  width: 90%;
-  max-width: 600px;
-  height: 80vh;
-  padding: 15px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  box-shadow: 0 0 15px rgba(255, 255, 0, 0.5);
+  max-width: 900px;
+  margin: 30px auto;
+  padding: 10px;
+  background: rgba(30, 30, 40, 0.7);
+  border-radius: 10px;
+  backdrop-filter: blur(10px);
+  border: 2px solid #8882;
+  box-shadow: 0 0 10px #0008;
 }
 
-#messagesUl {
-  list-style: none;
-  overflow-y: auto;
-  flex-grow: 1;
-  padding-right: 10px;
+.chat-header {
+  text-align: center;
   margin-bottom: 10px;
-  scroll-behavior: smooth;
 }
 
-/* Khung từng người */
-.message {
+#messages {
+  list-style: none;
+  padding: 0;
+  max-height: 65vh;
+  overflow-y: auto;
+}
+
+.message-box {
+  margin: 10px 0;
+  padding: 10px;
+  background: rgba(0, 0, 0, 0.2);
+  border-left: 4px solid gold;
+  border-radius: 8px;
   display: flex;
   align-items: flex-start;
-  margin-bottom: 12px;
-  background: rgba(255, 255, 255, 0.07);
-  border-radius: 12px;
-  padding: 10px;
-  position: relative;
-  transition: all 0.3s ease-in-out;
-  border-left: 4px solid #ffcc00;
+  gap: 10px;
 }
 
 .avatar {
-  width: 45px;
-  height: 45px;
+  width: 50px;
+  height: 50px;
   border-radius: 50%;
-  margin-right: 10px;
-  border: 2px solid #ffd700;
+  background: #ccc;
   object-fit: cover;
+  border: 2px solid gold;
 }
 
 .message-content {
-  display: flex;
-  flex-direction: column;
-  color: #fff;
-  max-width: 80%;
-  word-wrap: break-word;
+  flex: 1;
 }
 
-.username {
+.sender {
+  color: gold;
   font-weight: bold;
-  color: #ffe600;
-  margin-bottom: 4px;
+  margin-bottom: 5px;
 }
 
 .text {
-  font-size: 15px;
-  line-height: 1.4;
-  color: #fff;
+  font-weight: bold;
+  color: #ffe066;
+  word-wrap: break-word;
 }
 
-.message img {
-  max-width: 100%;
-  border-radius: 10px;
-  margin-top: 5px;
-  border: 1px solid #ccc;
-}
-
-/* Khu vực nhập tin */
-.input-area {
-  display: flex;
-  gap: 6px;
-  padding-top: 10px;
-  border-top: 1px solid rgba(255, 255, 255, 0.2);
-}
-
-.input-area input[type="text"] {
-  flex: 1;
-  padding: 8px 10px;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  outline: none;
-  background-color: rgba(255, 255, 255, 0.2);
-  color: #fff;
-}
-
-.input-area button {
-  padding: 8px 12px;
-  border: none;
-  border-radius: 10px;
-  background-color: #ffcc00;
-  color: #000;
-  cursor: pointer;
-  transition: background-color 0.2s ease;
-}
-
-.input-area button:hover {
-  background-color: #ffdd33;
-}
-
-/* Nút hành động tin nhắn */
-.message-actions {
-  margin-top: 5px;
-  font-size: 12px;
-  color: #aaa;
+.chat-controls {
   display: flex;
   gap: 10px;
-  cursor: pointer;
+  margin-top: 10px;
 }
 
-.message-actions span:hover {
-  color: #fff;
-  text-decoration: underline;
+.chat-controls input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+}
+
+.chat-controls button {
+  padding: 10px;
+  background-color: gold;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
 }
