@@ -3,31 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Huyền Cửu Thiên - Chat Tiên Giới</title>
+  <title>Huyền Cửu Thiên - Chat May Mắn</title>
   <link rel="stylesheet" href="style.css" />
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.10.0/firebase-database.js"></script>
 </head>
 <body>
-  <header>
-    <h1>🌌 Chat Tiên Giới</h1>
-    <button id="clearBtn" title="Xoá tất cả">🗑</button>
-  </header>
+  <div class="chat-container">
+    <ul id="messagesUl"></ul>
 
-  <main id="chat-container">
-    <ul id="messages"></ul>
-  </main>
+    <div class="input-area">
+      <input id="messageInput" type="text" placeholder="Nhập tin nhắn..." />
+      <input id="imageInput" type="file" accept="image/*" style="display: none" />
+      <button onclick="imageInput.click()">🖼</button>
+      <button id="emojiPicker">😊</button>
+      <button id="sendBtn">Gửi</button>
+      <button id="clearBtn">🗑️</button>
+    </div>
+  </div>
 
-  <footer>
-    <button class="icon-btn" id="emojiBtn">😊</button>
-    <input type="file" id="imageInput" accept="image/*" hidden />
-    <button class="icon-btn" id="imageBtn" title="Gửi ảnh">🖼</button>
-    <input type="text" id="messageInput" placeholder="Nhập lời tiên tri..." />
-    <button class="icon-btn" id="sendBtn" title="Gửi">📨</button>
-  </footer>
-
-  <div id="emojiPicker" class="hidden"></div>
-
-  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-app.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.6.10/firebase-database.js"></script>
-  <script src="script.js" type="module"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@joeattardi/emoji-button@4.6.2/dist/index.min.js"></script>
+  <script src="app.js"></script>
 </body>
 </html>
