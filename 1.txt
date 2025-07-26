@@ -1,251 +1,525 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Tuấn Dev | Trader, Học Sinh & Nhà Sáng Tạo</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
-  <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới Thiệu Tuấn - Học Sinh, Dev & Trader</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Thanh Điều Hướng -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                <i class="bi bi-person-circle"></i> Tuấn<span class="text-accent">Dev</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#">Trang Chủ</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">Về Tôi</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills">Kỹ Năng</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#trading">Giao Dịch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Liên Hệ</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-<!-- Thanh điều hướng -->
-<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
-  <div class="container">
-    <a class="navbar-brand" href="#">
-      <i class="bi bi-terminal-fill"></i> Tuấn<span class="text-accent">Dev</span>
-    </a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav ms-auto">
-        <li class="nav-item"><a class="nav-link active" href="#">Giới Thiệu</a></li>
-        <li class="nav-item"><a class="nav-link" href="#skills">Kỹ Năng</a></li>
-        <li class="nav-item"><a class="nav-link" href="#projects">Dự Án</a></li>
-        <li class="nav-item"><a class="nav-link" href="#trading">Giao Dịch</a></li>
-        <li class="nav-item"><a class="nav-link" href="#contact">Liên Hệ</a></li>
-      </ul>
-    </div>
-  </div>
-</nav>
+    <!-- Phần Giới Thiệu -->
+    <header class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
+                    <h1 class="display-4 fw-bold animate__animated animate__fadeInUp">Xin Chào, Tôi Là Tuấn</h1>
+                    <p class="lead my-4 animate__animated animate__fadeInUp animate__delay-1s">Tôi là một học sinh 19 tuổi, đam mê lập trình và giao dịch tài chính. Khám phá hành trình của tôi trong thế giới công nghệ và đầu tư!</p>
+                    <div class="animate__animated animate__fadeInUp animate__delay-2s">
+                        <a href="#skills" class="btn btn-primary btn-lg me-2">Xem Kỹ Năng</a>
+                        <a href="#about" class="btn btn-outline-light btn-lg">Tìm Hiểu Thêm</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 animate__animated animate__fadeIn animate__delay-1s">
+                    <img src="./imagess/tuan-profile.jpg" alt="Tuấn trong một buổi làm việc" class="img-fluid rounded-4 hero-image">
+                </div>
+            </div>
+        </div>
+        <div class="hero-shape"></div>
+    </header>
 
-<!-- Phần giới thiệu -->
-<header class="hero">
-  <div class="container">
-    <div class="row align-items-center">
-      <div class="col-lg-6 text-center text-lg-start mb-5 mb-lg-0">
-        <h1 class="display-4 fw-bold animate__animated animate__fadeInUp">Tôi là Tuấn</h1>
-        <p class="lead my-4 animate__animated animate__fadeInUp animate__delay-1s">
-          Một học sinh trẻ tuổi, đam mê công nghệ và tài chính. Tôi là một lập trình viên tự học và nhà giao dịch tiền mã hóa đang xây dựng tương lai bằng chính đôi tay mình.
-        </p>
-        <div class="animate__animated animate__fadeInUp animate__delay-2s">
-          <a href="#projects" class="btn btn-primary btn-lg me-2">Xem Dự Án</a>
-          <a href="#contact" class="btn btn-outline-light btn-lg">Liên Hệ</a>
+    <!-- Phần Thống Kê -->
+    <section class="stats py-4">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="stat-item">
+                        <h3 class="stat-number"><span class="counter">2</span>+</h3>
+                        <p class="stat-text">Năm Lập Trình</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-3 mb-md-0">
+                    <div class="stat-item">
+                        <h3 class="stat-number"><span class="counter">50</span>+</h3>
+                        <p class="stat-text">Giao Dịch Thành Công</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="stat-item">
+                        <h3 class="stat-number"><span class="counter">5</span>+</h3>
+                        <p class="stat-text">Dự Án Hoàn Thành</p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="col-lg-6 animate__animated animate__fadeIn animate__delay-1s">
-        <img src="./imagess/output.jpg" alt="Ảnh Tuấn dev/trader" class="img-fluid rounded-4 hero-image" />
-      </div>
-    </div>
-  </div>
-  <div class="hero-shape"></div>
-</header>
-<!-- Giới thiệu bản thân -->
-<section class="stats py-4 bg-light">
-  <div class="container">
-    <div class="row text-center">
-      <div class="col-md-4 mb-3 mb-md-0">
-        <div class="stat-item">
-          <h3 class="stat-number"><span class="counter">5,000</span>+</h3>
-          <p class="stat-text">Giờ Lập Trình</p>
-        </div>
-      </div>
-      <div class="col-md-4 mb-3 mb-md-0">
-        <div class="stat-item">
-          <h3 class="stat-number"><span class="counter">120</span>+</h3>
-          <p class="stat-text">Dự Án Cá Nhân & Team</p>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="stat-item">
-          <h3 class="stat-number"><span class="counter">8</span>+</h3>
-          <p class="stat-text">Năm Theo Dõi Thị Trường Crypto</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="how-it-works" class="py-5">
-  <div class="container">
-    <div class="section-header text-center mb-5">
-      <span class="section-subtitle">Hành Trình Học Tập</span>
-      <h2 class="section-title">Tôi Đã Bắt Đầu Như Thế Nào</h2>
-      <p class="section-description">Từ chiếc máy tính cũ và vài dòng code đầu tiên, tôi đã tự học và từng bước xây dựng năng lực đa ngành: lập trình, AI, crypto.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="process-card">
-          <div class="process-icon">
-            <span class="process-number">1</span>
-            <i class="bi bi-book"></i>
-          </div>
-          <h3>Tự Học Kiến Thức Nền</h3>
-          <p>Tôi bắt đầu từ những tài liệu lập trình cơ bản, HTML/CSS rồi tới JavaScript, backend và cả AI cơ bản.</p>
-          <ul class="process-features">
-            <li><i class="bi bi-check-circle-fill"></i> Tự học qua YouTube, tài liệu quốc tế</li>
-            <li><i class="bi bi-check-circle-fill"></i> Không ngừng vọc vạch, sai là sửa</li>
-            <li><i class="bi bi-check-circle-fill"></i> Kỷ luật và tò mò</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="process-card active">
-          <div class="process-icon">
-            <span class="process-number">2</span>
-            <i class="bi bi-graph-up-arrow"></i>
-          </div>
-          <h3>Bước Vào Thị Trường Tài Chính</h3>
-          <p>Tôi theo dõi thị trường tiền mã hóa từ năm cấp 2, tự học phân tích kỹ thuật và quản trị vốn như một nhà đầu tư chuyên nghiệp.</p>
-          <ul class="process-features">
-            <li><i class="bi bi-check-circle-fill"></i> Giao dịch demo, ghi nhật ký lệnh</li>
-            <li><i class="bi bi-check-circle-fill"></i> Theo dõi macro, dòng tiền</li>
-            <li><i class="bi bi-check-circle-fill"></i> Ưu tiên quản trị rủi ro</li>
-          </ul>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="process-card">
-          <div class="process-icon">
-            <span class="process-number">3</span>
-            <i class="bi bi-lightbulb"></i>
-          </div>
-          <h3>Kết Hợp Đa Ngành</h3>
-          <p>Tôi đang xây dựng những dự án giao thoa giữa lập trình, blockchain và AI để tạo ra công cụ hỗ trợ cộng đồng đầu tư hiệu quả hơn.</p>
-          <ul class="process-features">
-            <li><i class="bi bi-check-circle-fill"></i> Viết code tool tài chính</li>
-            <li><i class="bi bi-check-circle-fill"></i> Tự động hóa lệnh & báo cáo</li>
-            <li><i class="bi bi-check-circle-fill"></i> Chia sẻ kiến thức cho người mới</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="projects" class="planner py-5 bg-dark text-light">
-  <div class="container">
-    <div class="section-header text-center mb-5">
-      <span class="section-subtitle">Một Phần Hành Trình</span>
-      <h2 class="section-title">Các Dự Án Cá Nhân</h2>
-      <p class="section-description">Tôi không ngừng thử nghiệm, xây dựng và cải tiến. Dưới đây là một vài sản phẩm nổi bật tôi đã làm trong quá trình học và làm việc.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 bg-secondary text-white border-0">
-          <div class="card-body">
-            <h3 class="card-title">Auto Tracker Crypto</h3>
-            <p class="card-text">Một công cụ theo dõi danh mục coin tự động cập nhật giá, tính lãi/lỗ, hỗ trợ Telegram alert.</p>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-check2-circle"></i> Sử dụng API Binance</li>
-              <li><i class="bi bi-check2-circle"></i> Giao diện đơn giản dễ dùng</li>
-              <li><i class="bi bi-check2-circle"></i> Chạy trên server cá nhân</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 bg-secondary text-white border-0">
-          <div class="card-body">
-            <h3 class="card-title">Website học lập trình</h3>
-            <p class="card-text">Nơi tôi chia sẻ những bài học thực tế, hướng dẫn từng bước cho người mới học lập trình.</p>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-check2-circle"></i> Tự thiết kế frontend</li>
-              <li><i class="bi bi-check2-circle"></i> Viết bằng HTML, CSS, JS</li>
-              <li><i class="bi bi-check2-circle"></i> Có hệ thống bài tập và video</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="card h-100 bg-secondary text-white border-0">
-          <div class="card-body">
-            <h3 class="card-title">Phân tích Macro & Cảnh báo FUD</h3>
-            <p class="card-text">Bot AI tự tổng hợp tin tức thị trường, phân tích cảm xúc cộng đồng, cảnh báo sớm về các biến động lớn.</p>
-            <ul class="list-unstyled">
-              <li><i class="bi bi-check2-circle"></i> Xử lý tin tức từ API, RSS</li>
-              <li><i class="bi bi-check2-circle"></i> Phân tích sentiment</li>
-              <li><i class="bi bi-check2-circle"></i> Gửi cảnh báo Telegram</li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="reviews" class="testimonials py-5">
-  <div class="container">
-    <div class="section-header text-center mb-5">
-      <span class="section-subtitle">Cảm Nhận Từ Người Thật</span>
-      <h2 class="section-title">Đánh Giá Từ Bạn Bè & Cộng Đồng</h2>
-      <p class="section-description">Tôi luôn biết ơn sự góp ý, phản hồi và khích lệ từ mọi người trên hành trình phát triển.</p>
-    </div>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="testimonial bg-light p-4 rounded-3 shadow-sm">
-          <p class="mb-3">“Tuấn là người có tư duy khác biệt. Dự án theo dõi thị trường của cậu ấy giúp mình tránh được 2 cú sập lớn trong năm ngoái.”</p>
-          <h5 class="mb-0">Minh (Trader lâu năm)</h5>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial bg-light p-4 rounded-3 shadow-sm">
-          <p class="mb-3">“Không ngờ một học sinh lại có thể viết tool chạy auto lệnh chuyên nghiệp như vậy. Rất đáng học hỏi.”</p>
-          <h5 class="mb-0">Anh Tín (Dev backend)</h5>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="testimonial bg-light p-4 rounded-3 shadow-sm">
-          <p class="mb-3">“Tuấn giúp mình học HTML/CSS từ con số 0. Website đầu tay của mình có giao diện không tệ lắm là nhờ chỉ dẫn của cậu ấy!”</p>
-          <h5 class="mb-0">Linh (Sinh viên năm nhất)</h5>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- Liên hệ -->
-<section id="contact" class="contact py-5 bg-secondary text-white">
-  <div class="container">
-    <div class="section-header text-center mb-4">
-      <span class="section-subtitle">Kết Nối Với Tôi</span>
-      <h2 class="section-title">Liên Hệ</h2>
-      <p class="section-description">Bạn có thể trao đổi công việc, học lập trình, hay chỉ đơn giản là bàn chuyện thị trường.</p>
-    </div>
-    <div class="row justify-content-center">
-      <div class="col-md-6">
-        <ul class="list-unstyled fs-5">
-          <li><i class="bi bi-telegram text-accent me-2"></i><strong>Telegram:</strong> @TuanTrader</li>
-          <li><i class="bi bi-envelope-fill text-accent me-2"></i><strong>Email:</strong> tuan.devcrypto@gmail.com</li>
-          <li><i class="bi bi-github text-accent me-2"></i><strong>GitHub:</strong> github.com/TuanDevTrader</li>
-          <li><i class="bi bi-geo-alt-fill text-accent me-2"></i><strong>Vị trí:</strong> Việt Nam (UTC+7)</li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-<!-- Chân trang -->
-<footer class="footer py-4 bg-dark text-light">
-  <div class="container text-center">
-    <p class="mb-1">© 2025 Tuấn | Học sinh - Dev - Trader</p>
-    <p class="small mb-0">Website cá nhân được xây dựng từ HTML/CSS thủ công. Mỗi dòng code là một phần của hành trình trưởng thành.</p>
-  </div>
-</footer>
+    <!-- Phần Về Tôi -->
+    <section id="about" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Hành Trình Cá Nhân</span>
+                <h2 class="section-title">Về Tôi - Tuấn</h2>
+                <p class="section-description">Một học sinh 19 tuổi với đam mê mãnh liệt trong lập trình và giao dịch tài chính</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="process-card">
+                        <div class="process-icon">
+                            <span class="process-number">1</span>
+                            <i class="bi bi-book"></i>
+                        </div>
+                        <h3>Học Sinh</h3>
+                        <p>Tôi hiện là học sinh, luôn nỗ lực học tập và khám phá những lĩnh vực mới để phát triển bản thân.</p>
+                        <ul class="process-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Tự học và nghiên cứu</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Quản lý thời gian hiệu quả</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Đam mê học hỏi</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-card active">
+                        <div class="process-icon">
+                            <span class="process-number">2</span>
+                            <i class="bi bi-code-slash"></i>
+                        </div>
+                        <h3>Lập Trình Viên</h3>
+                        <p>Tôi phát triển các ứng dụng web và phần mềm, tập trung vào giao diện người dùng và trải nghiệm mượt mà.</p>
+                        <ul class="process-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Thành thạo HTML, CSS, JS</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Sử dụng Firebase, Node.js</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Xây dựng giao diện hiện đại</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="process-card">
+                        <div class="process-icon">
+                            <span class="process-number">3</span>
+                            <i class="bi bi-graph-up"></i>
+                        </div>
+                        <h3>Nhà Giao Dịch</h3>
+                        <p>Tôi tham gia giao dịch cổ phiếu và tiền điện tử, áp dụng phân tích kỹ thuật để tối ưu hóa lợi nhuận.</p>
+                        <ul class="process-features">
+                            <li><i class="bi bi-check-circle-fill"></i> Phân tích biểu đồ giá</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Quản lý rủi ro</li>
+                            <li><i class="bi bi-check-circle-fill"></i> Theo dõi thị trường</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- Bootstrap JS -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Phần Kỹ Năng -->
+    <section class="activities-showcase py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Điểm Mạnh</span>
+                <h2 class="section-title">Kỹ Năng Của Tôi</h2>
+                <p class="section-description">Những kỹ năng tôi đã rèn luyện để phát triển trong lập trình và giao dịch</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="activity-category">
+                        <div class="activity-icon">
+                            <i class="bi bi-code"></i>
+                        </div>
+                        <h4>Lập Trình</h4>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="activity-category">
+                        <div class="activity-icon">
+                            <i class="bi bi-bar-chart-line"></i>
+                        </div>
+                        <h4>Phân Tích Kỹ Thuật</h4>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="activity-category">
+                        <div class="activity-icon">
+                            <i class="bi bi-clock"></i>
+                        </div>
+                        <h4>Quản Lý Thời Gian</h4>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="activity-category">
+                        <div class="activity-icon">
+                            <i class="bi bi-shield-check"></i>
+                        </div>
+                        <h4>Quản Lý Rủi Ro</h4>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="activity-category">
+                        <div class="activity-icon">
+                            <i class="bi bi-chat-dots"></i>
+                        </div>
+                        <h4>Giao Tiếp</h4>
+                    </div>
+                </div>
+                <div class="col-6 col-md-4 col-lg-2">
+                    <div class="activity-category">
+                        <div class="activity-icon">
+                            <i class="bi bi-lightbulb"></i>
+                        </div>
+                        <h4>Giải Quyết Vấn Đề</h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Giao Dịch -->
+    <section id="trading" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Hoạt Động Đầu Tư</span>
+                <h2 class="section-title">Hành Trình Giao Dịch</h2>
+                <p class="section-description">Khám phá chiến lược giao dịch và các lĩnh vực tôi đang tham gia</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-5">
+                    <div class="planner-form">
+                        <form id="trading-form">
+                            <div class="mb-4">
+                                <label for="investment" class="form-label">Ngân Sách Đầu Tư (VND)</label>
+                                <div class="input-group">
+                                    <span class="input-group-text"><i class="bi bi-currency-dollar"></i></span>
+                                    <input type="number" class="form-control form-control-lg" id="investment" min="1000000" required placeholder="Nhập ngân sách đầu tư">
+                                </div>
+                                <div class="form-text">Tôi sẽ gợi ý chiến lược phù hợp với ngân sách của bạn</div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Loại Hình Giao Dịch</label>
+                                <div class="activity-options">
+                                    <div class="activity-option">
+                                        <input class="form-check-input" type="checkbox" value="stocks" id="stocks">
+                                        <label class="form-check-label" for="stocks">
+                                            <i class="bi bi-graph-up"></i>
+                                            <span>Cổ Phiếu</span>
+                                        </label>
+                                    </div>
+                                    <div class="activity-option">
+                                        <input class="form-check-input" type="checkbox" value="crypto" id="crypto">
+                                        <label class="form-check-label" for="crypto">
+                                            <i class="bi bi-currency-bitcoin"></i>
+                                            <span>Tiền Điện Tử</span>
+                                        </label>
+                                    </div>
+                                    <div class="activity-option">
+                                        <input class="form-check-input" type="checkbox" value="forex" id="forex">
+                                        <label class="form-check-label" for="forex">
+                                            <i class="bi bi-currency-exchange"></i>
+                                            <span>Forex</span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="mb-4">
+                                <label class="form-label">Phong Cách Giao Dịch</label>
+                                <div class="date-type-options">
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="tradingStyle" id="tradingStyleShort" value="short-term" checked>
+                                        <label class="form-check-label" for="tradingStyleShort">Ngắn Hạn</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="tradingStyle" id="tradingStyleLong" value="long-term">
+                                        <label class="form-check-label" for="tradingStyleLong">Dài Hạn</label>
+                                    </div>
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="tradingStyle" id="tradingStyleSwing" value="swing">
+                                        <label class="form-check-label" for="tradingStyleSwing">Swing Trading</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100">
+                                <i class="bi bi-magic"></i> Gợi Ý Chiến Lược
+                            </button>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-lg-7">
+                    <div id="results" class="d-none">
+                        <div class="results-header">
+                            <h3>Chiến Lược Giao Dịch Cá Nhân Hóa</h3>
+                            <p class="text-muted">Dựa trên sở thích của bạn, tôi đã tạo ra các chiến lược giao dịch phù hợp</p>
+                        </div>
+                        <div id="trading-suggestions" class="trading-suggestions">
+                            <!-- Gợi ý giao dịch sẽ được chèn ở đây -->
+                        </div>
+                    </div>
+                    <div id="initial-state" class="text-center py-5">
+                        <img src="./imagess/trading-illustration.jpg" alt="Hình minh họa giao dịch" class="img-fluid mb-4 initial-image">
+                        <h4>Sẵn sàng khám phá chiến lược giao dịch?</h4>
+                        <p class="text-muted">Điền vào biểu mẫu để nhận gợi ý cá nhân hóa dựa trên sở thích của bạn.</p>
+                        <div class="features-list">
+                            <div class="feature-item">
+                                <i class="bi bi-lightning-charge-fill"></i>
+                                <span>Gợi Ý Nhanh Chóng</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-geo-alt-fill"></i>
+                                <span>Phù Hợp Thị Trường</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="bi bi-graph-up"></i>
+                                <span>Tối Ưu Lợi Nhuận</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Câu Chuyện Thành Công -->
+    <section id="testimonials" class="py-5 bg-light">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Thành Tích</span>
+                <h2 class="section-title">Những Thành Công Của Tôi</h2>
+                <p class="section-description">Một số dự án và giao dịch nổi bật mà tôi đã đạt được</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Tôi đã phát triển một ứng dụng chat thời gian thực sử dụng Firebase, mang lại trải nghiệm mượt mà cho người dùng."</p>
+                        <div class="testimonial-user">
+                            <img src="https://via.placeholder.com/60" alt="Tuấn" class="testimonial-avatar">
+                            <div>
+                                <h5 class="testimonial-name">Tuấn - Dự Án Chat</h5>
+                                <p class="testimonial-location">Hà Nội, Việt Nam</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                        </div>
+                        <p class="testimonial-text">"Nhờ phân tích kỹ thuật, tôi đã đạt lợi nhuận 20% từ giao dịch Bitcoin trong 3 tháng."</p>
+                        <div class="testimonial-user">
+                            <img src="https://via.placeholder.com/60" alt="Tuấn" class="testimonial-avatar">
+                            <div>
+                                <h5 class="testimonial-name">Tuấn - Giao Dịch Crypto</h5>
+                                <p class="testimonial-location">Hà Nội, Việt Nam</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="testimonial-rating">
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-fill"></i>
+                            <i class="bi bi-star-half"></i>
+                        </div>
+                        <p class="testimonial-text">"Tôi đã xây dựng một giao diện web giống YouTube với tính năng kéo-thả sticker, nhận được nhiều phản hồi tích cực."</p>
+                        <div class="testimonial-user">
+                            <img src="https://via.placeholder.com/60" alt="Tuấn" class="testimonial-avatar">
+                            <div>
+                                <h5 class="testimonial-name">Tuấn - Dự Án Web</h5>
+                                <p class="testimonial-location">Hà Nội, Việt Nam</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Câu Hỏi Thường Gặp -->
+    <section id="contact" class="py-5">
+        <div class="container">
+            <div class="section-header text-center mb-5">
+                <span class="section-subtitle">Liên Hệ Với Tôi</span>
+                <h2 class="section-title">Câu Hỏi Thường Gặp</h2>
+                <p class="section-description">Tìm hiểu thêm về tôi và cách liên hệ để hợp tác hoặc trao đổi</p>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                                    Làm thế nào để liên hệ với bạn?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Bạn có thể liên hệ với tôi qua email hoặc các nền tảng mạng xã hội được liệt kê ở phần chân trang. Tôi luôn sẵn sàng trao đổi về lập trình hoặc giao dịch!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Bạn có nhận làm dự án lập trình tự do không?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Có, tôi nhận làm các dự án lập trình tự do, đặc biệt là các dự án web sử dụng HTML, CSS, JavaScript và Firebase. Hãy liên hệ để thảo luận chi tiết!
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Bạn sử dụng chiến lược giao dịch nào?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Tôi chủ yếu sử dụng phân tích kỹ thuật, kết hợp các chỉ báo như RSI, MACD và đường trung bình động. Tôi cũng áp dụng quản lý rủi ro nghiêm ngặt.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Bạn có chia sẻ mẹo lập trình hoặc giao dịch không?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    Chắc chắn rồi! Tôi thường chia sẻ các mẹo và kinh nghiệm trên các nền tảng mạng xã hội hoặc qua email. Hãy theo dõi để cập nhật!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Phần Kêu Gọi Hành Động -->
+    <section class="cta-section py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mb-4 mb-lg-0">
+                    <h2 class="cta-title">Sẵn Sàng Hợp Tác Với Tôi?</h2>
+                    <p class="cta-text">Hãy liên hệ để cùng nhau tạo ra những dự án tuyệt vời hoặc chia sẻ về giao dịch tài chính!</p>
+                </div>
+                <div class="col-lg-4 text-lg-end">
+                    <a href="#contact" class="btn btn-light btn-lg">Liên Hệ Ngay</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Chân Trang -->
+    <footer class="footer py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4 mb-lg-0">
+                    <h5 class="footer-title">Tuấn<span class="text-accent">Dev</span></h5>
+                    <p class="footer-description">Một học sinh 19 tuổi đam mê lập trình và giao dịch tài chính, luôn tìm kiếm cơ hội để học hỏi và phát triển.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Liên Kết Nhanh</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Trang Chủ</a></li>
+                        <li><a href="#about">Về Tôi</a></li>
+                        <li><a href="#skills">Kỹ Năng</a></li>
+                        <li><a href="#trading">Giao Dịch</a></li>
+                        <li><a href="#contact">Liên Hệ</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+                    <h5 class="footer-heading">Lĩnh Vực</h5>
+                    <ul class="footer-links">
+                        <li><a href="#">Lập Trình Web</a></li>
+                        <li><a href="#">Giao Dịch Cổ Phiếu</a></li>
+                        <li><a href="#">Giao Dịch Crypto</a></li>
+                        <li><a href="#">Phân Tích Kỹ Thuật</a></li>
+                        <li><a href="#">Quản Lý Rủi Ro</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4 col-md-4">
+                    <h5 class="footer-heading">Bản Tin</h5>
+                    <p>Đăng ký để nhận mẹo lập trình và giao dịch từ tôi.</p>
+                    <form class="newsletter-form">
+                        <div class="input-group">
+                            <input type="email" class="form-control" placeholder="Địa chỉ email của bạn" required>
+                            <button class="btn btn-primary" type="submit">Đăng Ký</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <hr class="footer-divider">
+            <div class="footer-bottom">
+                <p class="copyright">© 2025 Tuấn Dev. Bản quyền thuộc về Tuấn.</p>
+                <div class="footer-bottom-links">
+                    <a href="#">Chính Sách Bảo Mật</a>
+                    <a href="#">Điều Khoản Dịch Vụ</a>
+                    <a href="#">Liên Hệ</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
